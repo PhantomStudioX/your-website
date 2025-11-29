@@ -1,3 +1,5 @@
+// inventory-website/js/products.js //
+
 const products = [
   // -------------------
   // 📱 PHONES (6 items)

@@ -1,3 +1,5 @@
+// inventory-website/js/main.js
+
 // Helper: Get URL query parameter
 function getQueryParam(name) {
   const params = new URLSearchParams(window.location.search);
@@ -24,7 +26,15 @@ function loadProducts() {
     <div class="product-card">
       <img src="${p.image}" alt="${p.name}">
       <h3>${p.name}</h3>
-      <p>Price: ${p.price}</p>
+
+      <!-- Color dots -->
+      <div class="color-options">
+        ${(p.colors || []).map(c => `
+          <span class="color-dot" style="background:${c}"></span>
+        `).join('')}
+      </div>
+
+      <p class="price">Price: ${p.price}</p>
       <p>${p.stock > 0 ? "In Stock" : "Out of Stock"}</p>
     </div>
   `).join('');
@@ -41,7 +51,15 @@ if (searchInput) {
       <div class="product-card">
         <img src="${p.image}" alt="${p.name}">
         <h3>${p.name}</h3>
-        <p>Price: ${p.price}</p>
+
+        <!-- Color dots (search results too!) -->
+        <div class="color-options">
+          ${(p.colors || []).map(c => `
+            <span class="color-dot" style="background:${c}"></span>
+          `).join('')}
+        </div>
+
+        <p class="price">Price: ${p.price}</p>
         <p>${p.stock > 0 ? "In Stock" : "Out of Stock"}</p>
       </div>
     `).join('');

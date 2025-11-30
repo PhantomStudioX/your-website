@@ -97,11 +97,10 @@ main {
   margin: 8px 0;
 }
 
-.color-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid #e0e0e0;
+/* Highlight when selected */
+.color-dot.active-color {
+  border: 2px solid #4caf50;
+  transform: scale(1.2);
 }
 
 /* Footer */

@@ -220,11 +220,11 @@ const products = [
   },
   {
     id: 23,
-    name: "K2 Pro Gaming Headset,
+    name: "K2 Pro Gaming Headset",
     category: "gaming",
     price: "$50",
     stock: 3,
     image: "images/k2-pro-headset-blue.jpg",
     colors: ["blue"]
-  },
+    }, 
 ];

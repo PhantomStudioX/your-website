@@ -89,7 +89,7 @@ main {
   margin: 6px 0;
 }
 
-/* NEW — Color Dots */
+/* Color Dots */
 .color-options {
   display: flex;
   gap: 6px;
@@ -97,6 +97,14 @@ main {
   margin: 8px 0;
 }
 
+.color-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  display: inline-block;
+}
 /* Highlight when selected */
 .color-dot.active-color {
   border: 2px solid #4caf50;

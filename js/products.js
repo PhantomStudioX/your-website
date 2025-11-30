@@ -224,7 +224,7 @@ const products = [
     category: "gaming",
     price: "$50",
     stock: 3,
-    image: "images/k2-pro-headset-blue.jpg",
-    colors: ["blue"]
+    image: "images/k2-pro-headset-red.jpg",
+    colors: ["red"]
     }, 
 ];

@@ -77,7 +77,7 @@ const products = [
     category: "tablets",
     price: "$699",
     stock: 3,
-    image: "images/galaxy-tab-s9.jpg",
+    image: "images/galaxy-tabs9-black.jpg",
     colors: ["gray", "beige"]
   },
   {
@@ -86,7 +86,7 @@ const products = [
     category: "tablets",
     price: "$149",
     stock: 7,
-    image: "images/fire-hd-10.jpg",
+    image: "images/fire-hd-10-black.jpg",
     colors: ["black", "blue"]
   },
   {
@@ -95,7 +95,7 @@ const products = [
     category: "tablets",
     price: "$229",
     stock: 5,
-    image: "images/lenovo-p11.jpg",
+    image: "images/lenovo-p11-black.jpg",
     colors: ["gray"]
   },
 

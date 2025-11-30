@@ -215,7 +215,7 @@ const products = [
     category: "gaming",
     price: "$499",
     stock: 2,
-    image: "images/xbox-one-black.jpg",
-    colors: ["black"]
+    image: "images/xbox-one-white.jpg",
+    colors: ["white"]
   }
 ];

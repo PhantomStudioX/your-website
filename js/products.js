@@ -196,4 +196,26 @@ const products = [
     image: "images/bluetooth-keyboard.jpg",
     colors: ["black", "white"]
   }
+
+    // -------------------------
+  // 🎮 GAMING (2 items)
+  // -------------------------
+  {
+    id: 21,
+    name: "PlayStation 4",
+    category: "gaming",
+    price: "$499",
+    stock: 3,
+    image: "images/ps4-black.jpg",
+    colors: ["black"]
+  },
+  {
+    id: 22,
+    name: "Xbox One",
+    category: "gaming",
+    price: "$499",
+    stock: 2,
+    image: "images/xbox-one-black.jpg",
+    colors: ["black"]
+  }
 ];

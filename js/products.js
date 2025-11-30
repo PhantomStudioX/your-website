@@ -68,7 +68,7 @@ const products = [
     category: "tablets",
     price: "$1099",
     stock: 2,
-    image: "images/ipad-pro.jpg",
+    image: "images/ipad-pro12-silver.jpg",
     colors: ["silver", "spacegray"]
   },
   {
@@ -108,7 +108,7 @@ const products = [
     category: "laptops",
     price: "$1199",
     stock: 2,
-    image: "images/macbook-air-m2.jpg",
+    image: "images/macbook-air-m2-silver.jpg",
     colors: ["silver", "starlight", "spacegray"]
   },
   {
@@ -162,11 +162,11 @@ const products = [
   },
   {
     id: 17,
-    name: "Apple AirPods Pro",
+    name: "AirPods Pro 2",
     category: "accessories",
     price: "$249",
     stock: 4,
-    image: "images/airpods-pro.jpg",
+    image: "images/airpods-pro2-white.jpg",
     colors: ["white"]
   },
   {

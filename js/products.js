@@ -64,7 +64,7 @@ const products = [
   // -------------------
   {
     id: 7,
-    name: "iPad Pro 12.9",
+    name: "iPad Pro 12.9 6th Gen",
     category: "tablets",
     price: "$1099",
     stock: 2,

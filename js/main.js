@@ -15,7 +15,7 @@ function loadProducts() {
     filtered = products.filter(p => p.category === category);
     if (titleEl) titleEl.textContent = category.charAt(0).toUpperCase() + category.slice(1);
   } else {
-    filtered = products.slice(0, 4); // show first 4 as featured
+    filtered = products.slice(0, 5); // show first 4 as featured
   }
 
   if (!container) return;

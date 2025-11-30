@@ -171,12 +171,12 @@ const products = [
   },
   {
     id: 18,
-    name: "Samsung 45W Fast Charger",
+    name: "K2 Pro Gaming Headset",
     category: "accessories",
     price: "$39",
     stock: 9,
-    image: "images/samsung-charger.jpg",
-    colors: ["white", "black"]
+    image: "images/k2-pro-headset-blue.jpg",
+    colors: ["blue"]
   },
   {
     id: 19,

@@ -19,7 +19,7 @@ const products = [
     category: "phones",
     price: "$849",
     stock: 6,
-    image: "images/galaxy-s23.jpg",
+    image: "images/galaxy-s23-black.jpg",
     colors: ["black", "cream", "green"]
   },
   {
@@ -28,7 +28,7 @@ const products = [
     category: "phones",
     price: "$799",
     stock: 5,
-    image: "images/pixel8.jpg",
+    image: "images/pixel8-black.jpg",
     colors: ["black", "pink", "mint"]
   },
   {

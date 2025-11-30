@@ -1,5 +1,3 @@
-// inventory-website/js/main.js
-
 // Helper: Get URL query parameter
 function getQueryParam(name) {
   const params = new URLSearchParams(window.location.search);
@@ -24,13 +22,17 @@ function loadProducts() {
 
   container.innerHTML = filtered.map(p => `
     <div class="product-card">
-      <img src="${p.image}" alt="${p.name}">
+      <img id="img-${p.id}" src="${p.image}" alt="${p.name}">
       <h3>${p.name}</h3>
 
       <!-- Color dots -->
       <div class="color-options">
         ${(p.colors || []).map(c => `
-          <span class="color-dot" style="background:${c}"></span>
+          <span class="color-dot"
+            data-id="${p.id}"
+            data-color="${c}"
+            style="background:${c};">
+          </span>
         `).join('')}
       </div>
 
@@ -38,6 +40,34 @@ function loadProducts() {
       <p>${p.stock > 0 ? "In Stock" : "Out of Stock"}</p>
     </div>
   `).join('');
+
+  enableColorSwitching();
+}
+
+// NEW — enable color switching
+function enableColorSwitching() {
+  document.querySelectorAll(".color-dot").forEach(dot => {
+    dot.addEventListener("click", () => {
+      const id = dot.getAttribute("data-id");
+      const color = dot.getAttribute("data-color");
+
+      const img = document.getElementById(`img-${id}`);
+      if (!img) return;
+
+      // Build new image filename:
+      const base = img.src.split("/").pop().split(".")[0]; 
+      const folder = img.src.replace(/\/[^\/]*$/, "/");
+
+      // If original = iphone15.jpg → base = "iphone15"
+      const mainBase = base.includes("-") ? base.split("-")[0] : base;
+
+      img.src = `${folder}${mainBase}-${color}.jpg`;
+
+      // Highlight selected dot
+      dot.parentElement.querySelectorAll(".color-dot").forEach(d => d.classList.remove("active-color"));
+      dot.classList.add("active-color");
+    });
+  });
 }
 
 // Search filter
@@ -49,13 +79,17 @@ if (searchInput) {
     const container = document.getElementById("product-list");
     container.innerHTML = filtered.map(p => `
       <div class="product-card">
-        <img src="${p.image}" alt="${p.name}">
+        <img id="img-${p.id}" src="${p.image}" alt="${p.name}">
         <h3>${p.name}</h3>
 
         <!-- Color dots (search results too!) -->
         <div class="color-options">
           ${(p.colors || []).map(c => `
-            <span class="color-dot" style="background:${c}"></span>
+            <span class="color-dot"
+              data-id="${p.id}"
+              data-color="${c}"
+              style="background:${c};">
+            </span>
           `).join('')}
         </div>
 
@@ -63,6 +97,8 @@ if (searchInput) {
         <p>${p.stock > 0 ? "In Stock" : "Out of Stock"}</p>
       </div>
     `).join('');
+
+    enableColorSwitching();
   });
 }
 

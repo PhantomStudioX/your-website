@@ -37,7 +37,7 @@ const products = [
     category: "phones",
     price: "$599",
     stock: 3,
-    image: "images/iphone13.jpg",
+    image: "images/iphone13-black.jpg",
     colors: ["red", "blue", "white"]
   },
   {
@@ -46,7 +46,7 @@ const products = [
     category: "phones",
     price: "$349",
     stock: 8,
-    image: "images/samsung-a54.jpg",
+    image: "images/samsung-a54-black.jpg",
     colors: ["violet", "lime", "black"]
   },
   {
@@ -55,7 +55,7 @@ const products = [
     category: "phones",
     price: "$699",
     stock: 2,
-    image: "images/oneplus11.jpg",
+    image: "images/oneplus11-black.jpg",
     colors: ["black", "green"]
   },
 

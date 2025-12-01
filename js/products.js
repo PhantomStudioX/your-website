@@ -1,5 +1,3 @@
-// inventory-website/js/products.js //
-
 const products = [
   // -------------------
   //     📱 PHONES 
@@ -78,7 +76,7 @@ const products = [
     price: "$699",
     stock: 3,
     image: "images/galaxy-tabs9-black.jpg",
-    colors: ["gray"]
+    colors: ["black"]
   },
   {
     id: 9,
@@ -96,7 +94,7 @@ const products = [
     price: "$229",
     stock: 5,
     image: "images/lenovo-p11-grey.jpg",
-    colors: ["grey"]
+    colors: ["grey"]  // matches real file
   },
 
   // -------------------
@@ -153,7 +151,7 @@ const products = [
   // -------------------------
   {
     id: 16,
-    name: "iPhone Type C Chrager",
+    name: "iPhone Type C Charger",
     category: "accessories",
     price: "$129",
     stock: 12,
@@ -197,9 +195,9 @@ const products = [
     colors: ["black", "white"]
   },
   
-   // -------------------------
-   // 🎮 GAMING
-   // -------------------------
+  // -------------------------
+  // 🎮 GAMING
+  // -------------------------
   {
     id: 21,
     name: "PlayStation 4",
@@ -226,5 +224,5 @@ const products = [
     stock: 3,
     image: "images/xbox-controller-white.jpg",
     colors: ["white", "red"]
-    }, 
+  }
 ];

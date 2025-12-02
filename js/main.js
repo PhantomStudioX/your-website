@@ -1,21 +1,23 @@
+// Helper: Shuffle array (randomize order)
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
 // Helper: Get URL query parameter
 function getQueryParam(name) {
   const params = new URLSearchParams(window.location.search);
   return params.get(name);
 }
 
-// Get daily "slice" of products for homepage
+// Get daily "slice" of products for homepage (now randomized)
 function getDailyProducts(products) {
-  const day = new Date().getDate();
-  const start = day % products.length;
   const count = 8;
-  const dailyProducts = [];
 
-  for (let i = 0; i < count; i++) {
-    dailyProducts.push(products[(start + i) % products.length]);
-  }
+  // Shuffle the entire list
+  const randomized = shuffle([...products]);
 
-  return dailyProducts;
+  // Return the first 8 items
+  return randomized.slice(0, count);
 }
 
 // Load products
@@ -24,9 +26,9 @@ function loadProducts() {
   const container = document.getElementById("product-list") || document.getElementById("featured-products");
   const titleEl = document.getElementById("category-title");
 
-  let filtered = category 
+  let filtered = category
       ? products.filter(p => p.category === category)
-      : getDailyProducts(products);
+      : getDailyProducts(products); // NOW RANDOM ON HOMEPAGE
 
   if (titleEl && category) {
     titleEl.textContent = category.charAt(0).toUpperCase() + category.slice(1);

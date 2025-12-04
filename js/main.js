@@ -11,7 +11,7 @@ function getQueryParam(name) {
 
 // Get daily "slice" of products for homepage (now randomized)
 function getDailyProducts(products) {
-  const count = 8;
+  const count = 10;
 
   // Shuffle the entire list
   const randomized = shuffle([...products]);

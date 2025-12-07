@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Products - Tech Inventory</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,19 +13,31 @@
       <h1>Tech Inventory</h1>
     </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html?category=phones">Phones</a>
-    <a href="products.html?category=tablets">Tablets</a>
-    <a href="products.html?category=laptops">Laptops</a>
-    <a href="products.html?category=gaming">Gaming</a>
-    <a href="products.html?category=accessories">Accessories</a>
-  </nav>
-</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html?category=phones">Phones</a>
+      <a href="products.html?category=tablets">Tablets</a>
+      <a href="products.html?category=laptops">Laptops</a>
+      <a href="products.html?category=gaming">Gaming</a>
+      <a href="products.html?category=accessories">Accessories</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
 
   <main>
     <h2 id="category-title"></h2>
-    <input type="text" id="search" placeholder="Search products...">
+
+    <div class="controls-row">
+      <input type="text" id="search" placeholder="Search products...">
+      <select id="sortSelect" aria-label="Sort products">
+        <option value="default">Sort: Default</option>
+        <option value="az">Name A → Z</option>
+        <option value="za">Name Z → A</option>
+        <option value="plh">Price: Low → High</option>
+        <option value="phl">Price: High → Low</option>
+      </select>
+    </div>
+
     <div id="product-list" class="product-grid"></div>
   </main>
 
@@ -35,5 +47,6 @@
 
   <script src="js/products.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
 </body>
 </html>

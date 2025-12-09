@@ -7,6 +7,9 @@ body {
   color: #2f2f2f;
 }
 
+/* Hidden helper (used by admin UI) */
+.hidden { display: none !important; }
+
 /* Header */
 header {
   background: #d6f5d6;
@@ -190,6 +193,11 @@ main {
   height:300px;
   animation: shimmer 1.2s infinite;
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
 }
 
 /* Cart styles */

@@ -1,45 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tech Inventory</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-left">
-      <img src="images/logo.png" alt="Logo" class="logo" />
-    </div>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
+  <header>
+@@ -19,6 +19,7 @@ <h1>Tech Inventory</h1>
+      <a href="products.html?category=laptops">Laptops</a>
+      <a href="products.html?category=gaming">Gaming</a>
+      <a href="products.html?category=accessories">Accessories</a>
       <a href="cart.html">Cart</a>
-      <a href="checkout.html">Checkout</a>
     </nav>
-
-    <button class="menu-icon" id="menuToggle">☰</button>
   </header>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="cart.html">Cart</a>
-    <a href="checkout.html">Checkout</a>
-  </div>
+@@ -33,5 +34,6 @@ <h2>Welcome! Browse our current stock:</h2>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1>Welcome to Tech Inventory</h1>
-    <p>Your one-stop shop for the latest devices.</p>
-    <a href="products.html" class="hero-btn">Browse Products</a>
-  </section>
-
+  <script src="js/products.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
 </body>
 </html>

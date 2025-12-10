@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const loginSection = $('admin-login');
   const dashboardSection = $('admin-dashboard');
 
-  // MOBILE SIDEBAR TOGGLE
-  const sidebar = document.getElementById('admin-sidebar');
-  const toggleBtn = document.getElementById('sidebar-toggle');
+  // MOBILE SIDEBAR TOGGLE (fixed selector)
+  const sidebar = document.querySelector('.admin-sidebar');
+  const toggleBtn = document.querySelector('.sidebar-toggle');
 
   if(toggleBtn){
     toggleBtn.addEventListener('click', ()=>{
@@ -96,12 +96,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   // If already authenticated — show dashboard
   if(isAdminAuth()){
-    if(loginSection) loginSection.classList.add('hidden');
-    if(dashboardSection) dashboardSection.classList.remove('hidden');
+    loginSection.classList.add('hidden');
+    dashboardSection.classList.remove('hidden');
     renderOverview(); renderProductsAdmin(); renderOrders(); renderMessages();
-  } else {
-    if(dashboardSection) dashboardSection.classList.add('hidden');
-    if(loginSection) loginSection.classList.remove('hidden');
   }
 
   // Login handler
@@ -122,7 +119,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 
-  // Sidebar navigation
+  // Sidebar navigation (fully working)
   document.querySelectorAll('.admin-nav a').forEach(a=>{
     a.addEventListener('click', (e)=>{
       e.preventDefault();
@@ -132,20 +129,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
       if(!isAdminAuth()){
         alert('Please login as admin to access this area.');
-        loginSection.classList.remove('hidden');
-        dashboardSection.classList.add('hidden');
         return;
       }
 
-      if(!view) return;
+      if(view){
+        showView(view);
+        if(view==='overview') renderOverview();
+        if(view==='products') renderProductsAdmin();
+        if(view==='orders') renderOrders();
+        if(view==='messages') renderMessages();
+      }
 
-      showView(view);
-      if(view==='overview') renderOverview();
-      if(view==='products') renderProductsAdmin();
-      if(view==='orders') renderOrders();
-      if(view==='messages') renderMessages();
-
-      // CLOSE SIDEBAR ON MOBILE AFTER CLICK
+      // CLOSE SIDEBAR ON MOBILE
       sidebar.classList.remove('active');
     });
   });
@@ -153,15 +148,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // Logout
   const logout = $('admin-logout');
   if(logout){
-    logout.addEventListener('click', (e)=>{
+    logout.addEventListener('click', e=>{
       e.preventDefault();
       setAdminAuth(false);
       loginSection.classList.remove('hidden');
       dashboardSection.classList.add('hidden');
-      document.getElementById('overview').innerHTML = '';
-      document.getElementById('products').innerHTML = '';
-      document.getElementById('orders').innerHTML = '';
-      document.getElementById('messages').innerHTML = '';
       location.reload();
     });
   }
